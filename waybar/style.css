@@ -1,3 +1,19 @@
+@define-color darkblue #161320;
+@define-color opacity rgba(255, 255, 255, 0.2);
+@define-color grey #282828;
+@define-color darkgrey #272727;
+@define-color lightpink #fbf1c7;
+@define-color orange #fe8019;
+@define-color red #fb4934;
+@define-color blue #b5e8e0;
+@define-color green #8ec07c;
+@define-color pink #bf616a;
+@define-color salmon #f8bd96;
+@define-color teal #689d6a;
+@define-color yellow #fabd2f;
+@define-color pink2 #f2cdcd;
+@define-color green2 #b8bb26;
+
 * {
   border: none;
   border-radius: 8px;
@@ -20,8 +36,8 @@ window#waybar.hidden {
   padding-right: 10px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: rgba(255, 255, 255, 0.2); 
+  color: @darkblue;
+  background: @opacity;
 }
 
 #workspaces {
@@ -31,29 +47,27 @@ window#waybar.hidden {
   font-weight: 500;
   margin-bottom: 0px;
   border-radius: 10px;
-  background: #282828;
-  /* default: background: #161320; */
+  background: @grey;
   transition: none;
 }
 
 #workspaces button {
   transition: none;
-  color: #fbf1c7;
-  /* default: color: #b5e8e0; */
+  color: @lightpink;
   background: transparent;
   border-radius: 2px;
 }
 
 #workspaces button.active {
-  color: #fe8019;
+  color: @orange;
 }
 
 #workspaces button:hover {
   transition: none;
   box-shadow: inherit;
   text-shadow: inherit;
-  color: #d65d0e;
-  border-color: #d65d0e;
+  color: @orange;
+  border-color: @orange;
 }
 
 #network {
@@ -64,8 +78,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #fb4934;
+  color: @darkblue;
+  background: @red;
 }
 
 #wireplumber {
@@ -76,8 +90,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: #1a1826;
-  background: #fae3b0;
+  color: @darkblue;
+  background: @lightpink;
 }
 
 #battery {
@@ -88,13 +102,13 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #b5e8e0;
+  color: @darkblue;
+  background: @blue;
 }
 
 #battery.critical:not(.charging) {
-  background-color: #b5e8e0;
-  color: #161320;
+  background-color: @blue;
+  color: @darkblue;
   animation-name: blink;
   animation-duration: 1s;
   animation-timing-function: linear;
@@ -104,8 +118,8 @@ window#waybar.hidden {
 
 @keyframes blink {
   to {
-    background-color: #bf616a;
-    color: #b5e8e0;
+    background-color: @pink;
+    color: @blue;
   }
 }
 
@@ -117,8 +131,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #f8bd96;
+  color: @darkblue;
+  background: @salmon;
 }
 
 #custom-weather {
@@ -129,8 +143,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #689d6a;
+  color: @darkblue;
+  background: @teal;
 }
 
 #clock {
@@ -141,8 +155,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #8ec07c;
+  color: @darkblue;
+  background: @green;
 }
 
 #mdp {
@@ -153,8 +167,8 @@ window#waybar.hidden {
   padding-right: 10px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #fabd2f;
+  color: @darkblue;
+  background: @yellow;
 }
 
 #memory {
@@ -165,8 +179,8 @@ window#waybar.hidden {
   padding-right: 10px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #fabd2f;
+  color: @darkblue;
+  background: @yellow;
 }
 
 #cpu {
@@ -177,8 +191,8 @@ window#waybar.hidden {
   padding-right: 10px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #b8bb26;
+  color: @darkblue;
+  background: @green2;
 }
 
 #custom-launcher {
@@ -189,8 +203,8 @@ window#waybar.hidden {
   padding-right: 5px;
   border-radius: 10px;
   transition: none;
-  color: #fe8019;
-  background: #161320;
+  color: @orange;
+  background: @darkgrey;
 }
 
 #custom-media, #pulseaudio {
@@ -201,8 +215,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: #161320;
-  background: #f2cdcd;
+  color: @darkblue;
+  background: @pink2;
 }
 
 #custom-power {
@@ -214,6 +228,7 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  background: #282828;
+  background: @grey;
   transition: none;
 }
+
