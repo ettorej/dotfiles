@@ -1,5 +1,6 @@
 @define-color darkblue #161320;
 @define-color opacity rgba(255, 255, 255, 0.2);
+@define-color opacity2 rgba(0, 0, 0, 0.5);
 @define-color grey #282828;
 @define-color darkgrey #272727;
 @define-color lightpink #fbf1c7;
@@ -13,15 +14,20 @@
 @define-color yellow #fabd2f;
 @define-color pink2 #f2cdcd;
 @define-color green2 #b8bb26;
+@define-color blue2 #458588;
 
 * {
   border: none;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   font-family: "JetbrainsMono Nerd Font";
   font-size: 12px;
   min-height: 16px;
 }
-
+/* window#waybar { */
+/*   background: @opacity2; */
+/*   color: @lightpink; */
+/*   border-radius: 0; */
+/* } */
 window#waybar {
   background: transparent;
 }
@@ -34,10 +40,10 @@ window#waybar.hidden {
   margin-top: 6px;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 10px;
+  /* border-radius: 7px; */
   transition: none;
   color: @darkblue;
-  background: @opacity;
+  /* background: @opacity;  */
 }
 
 #workspaces {
@@ -47,7 +53,9 @@ window#waybar.hidden {
   font-weight: 500;
   margin-bottom: 0px;
   border-radius: 10px;
-  background: @grey;
+  /* background: @grey; */
+  color: @blue2;
+  background: @opacity2;
   transition: none;
 }
 
@@ -55,19 +63,19 @@ window#waybar.hidden {
   transition: none;
   color: @lightpink;
   background: transparent;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 #workspaces button.active {
-  color: @orange;
+  color: @blue2;
 }
 
 #workspaces button:hover {
   transition: none;
   box-shadow: inherit;
   text-shadow: inherit;
-  color: @orange;
-  border-color: @orange;
+  color: @blue2;
+  background: @opacity2;
 }
 
 #network {
@@ -78,8 +86,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @red;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #wireplumber {
@@ -90,8 +98,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @lightpink;
+  color: @lightpink;
+  background: @opcacity2;
 }
 
 #battery {
@@ -102,8 +110,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @blue;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #battery.critical:not(.charging) {
@@ -131,8 +139,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @salmon;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #custom-weather {
@@ -143,8 +151,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @teal;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #clock {
@@ -155,8 +163,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @green;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #mdp {
@@ -167,8 +175,8 @@ window#waybar.hidden {
   padding-right: 10px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @yellow;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #memory {
@@ -179,8 +187,8 @@ window#waybar.hidden {
   padding-right: 10px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @yellow;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #cpu {
@@ -191,8 +199,8 @@ window#waybar.hidden {
   padding-right: 10px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @green2;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #custom-launcher {
@@ -203,8 +211,9 @@ window#waybar.hidden {
   padding-right: 5px;
   border-radius: 10px;
   transition: none;
-  color: @orange;
-  background: @darkgrey;
+  /* color: @orange; */
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #custom-media, #pulseaudio {
@@ -215,8 +224,8 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  color: @darkblue;
-  background: @pink2;
+  color: @lightpink;
+  background: @opacity2;
 }
 
 #custom-power {
@@ -228,7 +237,19 @@ window#waybar.hidden {
   margin-bottom: 0px;
   border-radius: 10px;
   transition: none;
-  background: @grey;
+  color: @lightpink;
+  background: @opacity2;
   transition: none;
 }
 
+#custom-updates {
+  margin-top: 6px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  color: @lightpink;
+  background: @opacity2;
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Sensor info
+cputemp=$(sensors | awk '/^CPU/ {print substr($2,2,2)}')
+memuse=$(free -m | awk '/^Mem/ {printf "%.1f\n", $3/1024}')
+fanspeed=$(sensors | awk '/^Processor Fan/ {print $3}')
+# cpuuse=$(iostat -c | awk 'NR>=4 && NR <=4' | awk '{print "User CPU use: "$1"%\nSystem CPU use:",$3"%"}')
+# gputemp=$(sensors | awk '/^edge/ {print "\n\nGPU Temp: " $2}')
+
+echo "cpu temp: "$cputemp"°c" "memory use: "$memuse"g" "fan speed: "$fanspeed"rpm"

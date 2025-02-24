@@ -1,0 +1,15 @@
+#!/bin/sh
+
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+
+DISK_ALERT=90
+df -H | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 " " $1 " " $6 }' | while read -r output;
+do
+  usePercent=$(echo "$output" | awk '{ print $1}' | cut -d'%' -f1 )
+  partition=$(echo "$output" | awk '{ print $2 }' )
+  mounedOn=$(echo "$output" | awk '{ print $3 }' )
+  if [ "$usePercent" -ge "$DISK_ALERT" ]; then
+    notify-send "Disk alert" "Almost out of disk space : $usePercent% used on $partition ($mounedOn)" -u critical -r 9991
+  fi
+done

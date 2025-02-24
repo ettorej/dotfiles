@@ -11,6 +11,7 @@
     "custom/media",
     "cpu",
     "memory",
+    "custom/updates",
     "network",
     "pulseaudio",
     "backlight",
@@ -20,6 +21,7 @@
     "custom/power"
   ],
   "clock": {
+    // "format": "<span foreground='#f5c2e7'>   </span>{:%H:%M %d/%m/%Y}",
     "format": "<span>  </span>{:%H:%M %d/%m/%Y}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
@@ -28,6 +30,7 @@
       "warning": 30,
       "critical": 15
     },
+    // "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
     "format": "<span>{icon} </span> {capacity}%",
     "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
     "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
@@ -65,6 +68,7 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "network": {
+    // "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
     "format-wifi": "<span>  </span>{essid}",
     "format-ethernet": "<span>󰤭  </span> Disconnected",
     "format-linked": "{ifname} (No IP) ",
@@ -122,6 +126,16 @@
     "interval": 3600,
     "exec": "wttrbar --location nantes --nerd",
     "return-type": "json"
+  },
+  "custom/updates": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "/home/ettore/.local/bin/updates",
+    "return-type": "json",
+		"exec-if": "exit 0",
+		"on-click": "pkill -SIGRTMIN+8 waybar",
+		"signal": 8
   },
   "custom/power": {
     "format" : "⏻ ",
